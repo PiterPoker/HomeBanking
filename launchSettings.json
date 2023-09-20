@@ -1,0 +1,24 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "homebanking.api": "StartDebugging",
+        "pgadmin": "StartWithoutDebugging",
+        "stackupPostgres": "StartWithoutDebugging",
+        "stackupRedis": "StartWithoutDebugging"
+      }
+    },
+    "Docker Release": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "homebanking.api": "StartWithoutDebugging",
+        "pgadmin": "StartWithoutDebugging",
+        "stackupPostgres": "StartWithoutDebugging",
+        "stackupRedis": "StartWithoutDebugging"
+      }
+    }
+  }
+}
