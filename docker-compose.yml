@@ -1,15 +1,6 @@
 version: '3.4'
 
 services:
-  homebanking.api:
-    image: ${DOCKER_REGISTRY-}homebankingapi
-    build:
-      context: .
-      dockerfile: HomeBanking.API/Dockerfile
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development 
-      - "DatabaseSettings__PostgressConnectionString=host=stackupPostgres;Port=5432;Database=Stackup;User Id=admin;Password=admin;"
-      - "CacheSettings__RedisCache=stackupRedis:6379"
 
   stackupRedis:
     image: redis:alpine
@@ -43,6 +34,26 @@ services:
       - "8009:80"
     volumes:
       - pgadmin-data:/var/lib/pgadmin
+
+  identity-api:
+    image: ${DOCKER_REGISTRY-}identityapi
+    build:
+      context: .
+      dockerfile: Identity.API/Dockerfile
+    depends_on:
+      - pgadmin
+
+  homebanking-api:
+    image: ${DOCKER_REGISTRY-}homebankingapi
+    build:
+      context: .
+      dockerfile: HomeBanking.API/Dockerfile
+    depends_on:
+      - pgadmin
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development 
+      - "DatabaseSettings__PostgressConnectionString=host=stackupPostgres;Port=5432;Database=Stackup;User Id=admin;Password=admin;"
+      - "CacheSettings__RedisCache=stackupRedis:6379"
 
 volumes:
   stackup_postgres_data:

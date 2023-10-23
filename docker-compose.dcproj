@@ -6,7 +6,7 @@
     <ProjectGuid>53ccfe52-9c89-4051-bb78-8dfe866389e7</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/home</DockerServiceUrl>
-    <DockerServiceName>homebanking.api</DockerServiceName>
+    <DockerServiceName>homebanking-api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">

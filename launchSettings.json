@@ -4,7 +4,8 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "homebanking.api": "StartDebugging",
+        "identity-api": "StartWithoutDebugging",
+        "homebanking-api": "StartDebugging",
         "pgadmin": "StartWithoutDebugging",
         "stackupPostgres": "StartWithoutDebugging",
         "stackupRedis": "StartWithoutDebugging"
@@ -14,7 +15,8 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "homebanking.api": "StartWithoutDebugging",
+        "identity-api": "StartWithoutDebugging",
+        "homebanking-api": "StartWithoutDebugging",
         "pgadmin": "StartWithoutDebugging",
         "stackupPostgres": "StartWithoutDebugging",
         "stackupRedis": "StartWithoutDebugging"
